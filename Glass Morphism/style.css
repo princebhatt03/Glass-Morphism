@@ -1,0 +1,335 @@
+@font-face {
+  font-family: myfont;
+  src: url(font/GRIFTER\ Bold\ 700.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: myfont;
+  font-weight: lighter;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+#page1 {
+  width: 100%;
+  overflow: hidden;
+  min-height: 100vh;
+  /* background: linear-gradient(to bottom, #0d0628, #361d46); */
+  background-color: #0e0629;
+}
+#logoimg {
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  padding: 40px 60px;
+}
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.nav2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 12px;
+}
+.nav2 a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  padding: 15px 25px;
+}
+.underlineText {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+  cursor: pointer;
+}
+.underlineText::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  background-color: #f88cd4;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.underlineText:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+#page1text {
+  color: #eeedf2;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  position: absolute;
+  top: 25%;
+  left: 3%;
+  font-size: 35px;
+}
+#para {
+  display: inline-block;
+  font-size: 15px;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+}
+#btn {
+  width: 300px;
+  padding: 10px 15px;
+  height: 60px;
+  background-color: transparent;
+  border: 2px solid white;
+  position: absolute;
+  cursor: pointer;
+  top: 120%;
+  text-transform: uppercase;
+  color: #f88cd4;
+}
+#btn2 {
+  width: 130px;
+  padding: 10px 15px;
+  height: 60px;
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid white;
+  position: absolute;
+  top: 120%;
+  left: 63%;
+  text-transform: uppercase;
+  color: #361d46;
+}
+#hero {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: orangered;
+  position: absolute;
+  right: 14%;
+  top: 27%;
+}
+/* @keyframes anime1 {
+  from {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(21.6446deg)
+      rotateY(12deg) rotateZ(-9deg) skew(0deg, 0deg);
+  }
+  to {
+    transform: skew(30deg);
+  }
+} */
+.hero__icon,
+.hero__card-text,
+.hero__gradient {
+  pointer-events: none;
+}
+
+.hero__card {
+  backdrop-filter: blur(2em);
+  -webkit-backdrop-filter: blur(2em);
+}
+
+.hero__card-content {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.my-video {
+  display: flex;
+  right: 10%;
+  top: 15%;
+  width: 37vw;
+  position: absolute;
+}
+:root {
+  --glitter: url('https://assets.codepen.io/13471/silver-glitter-background.png');
+  --duration: 6.66s;
+}
+
+.card-front:before {
+  content: '';
+  inset: 0;
+  position: absolute;
+  transform: translate3d(0, 0, 0.01px);
+  /* background-image: var(--glitter), var(--glitter),
+    linear-gradient(120deg, black 25%, white, black 75%); */
+  background-size: 100% 100%, 80% 80%, 200% 200%;
+  background-blend-mode: multiply, multiply, overlay;
+  background-position: 50% 50%, 50% 50%, 50% 50%;
+  transform: rotate(45deg);
+  mix-blend-mode: color-dodge;
+  filter: brightness(2) contrast(0.8);
+  animation: bg var(--duration) ease infinite;
+}
+.card-front {
+  display: grid;
+  position: absolute;
+  transform: translate3d(0, 0, 0.01px);
+  width: 29%;
+  max-width: 580px;
+  top: 80%;
+  right: 13%;
+  aspect-ratio: 3/2;
+  background: linear-gradient(#6d4599, #361d46);
+  backdrop-filter: blur(20px);
+  border-radius: 3.5% 3.5% 3.5% 3.5% / 5% 5% 5% 5%;
+  background-size: cover;
+  box-shadow: 0 30px 40px -25px rgba(15, 5, 20, 1),
+    0 20px 50px -15px rgba(15, 5, 20, 1);
+  overflow: hidden;
+  animation: tilt var(--duration) ease infinite;
+  image-rendering: optimizequality;
+}
+.card-front:after {
+  content: '';
+  background: none, none, linear-gradient(125deg, #6d4599, #361d46);
+  background-size: 200% 200%;
+  mix-blend-mode: hard-light;
+  animation: bg var(--duration) ease infinite;
+}
+.card-front * {
+  font-family: PT Mono, monospace;
+}
+.cardLogo,
+.expiry,
+.name,
+.number,
+.chip,
+.icon {
+  color: #ccc;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  font-size: clamp(0.75rem, 2.8vw + 0.2rem, 1.1rem);
+  inset: 5%;
+  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5),
+    1px -1px 0px rgba(255, 255, 255, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.5),
+    1px -1px 0px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+.name,
+.number,
+.expiry {
+  background-image: linear-gradient(to bottom, #ededed 20%, #bababa 70%), none,
+    linear-gradient(
+      120deg,
+      transparent 10%,
+      white 40%,
+      white 60%,
+      transparent 90%
+    );
+  background-size: cover, cover, 200%;
+  background-position: 50% 50%;
+  background-blend-mode: overlay;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: bg var(--duration) ease infinite;
+}
+.number {
+  font-family: PT Mono, monospace;
+  text-align: center;
+  font-size: clamp(1rem, 8vw - 0.5rem, 1.5rem);
+  letter-spacing: 0.025em;
+  top: 60%;
+  bottom: auto;
+}
+.expiry,
+.name {
+  top: auto;
+}
+.name {
+  right: auto;
+  max-width: 180px;
+  line-height: 1.2;
+  text-align: left;
+}
+.expiry {
+  left: auto;
+}
+.cardLogo {
+  bottom: auto;
+  left: auto;
+  width: 15%;
+  filter: invert(1) saturate(0) brightness(1) contrast(1.2);
+  mix-blend-mode: screen;
+}
+.chip {
+  display: grid;
+  place-items: center;
+  width: 14%;
+  aspect-ratio: 5/4;
+  left: 10%;
+  top: 30%;
+  border-radius: 10% 10% 10% 10% / 15% 15% 15% 15%;
+  background-image: none, none,
+    linear-gradient(120deg, #777 10%, #fae205 40%, #ddd 60%, #777 90%);
+  background-size: 200% 200%;
+  background-position: 50% 50%;
+  overflow: hidden;
+  animation: bg var(--duration) ease infinite;
+}
+.chip svg {
+  display: block;
+  width: 90%;
+  fill: none;
+  stroke: #444;
+  stroke-width: 2;
+}
+.contactless {
+  position: absolute;
+  left: 23%;
+  top: 30%;
+  width: 12%;
+  rotate: 90deg;
+  stroke-width: 1.25;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.5;
+}
+.icon {
+  width: 25%;
+  bottom: auto;
+  right: auto;
+  top: 0;
+  left: 15px;
+  filter: invert(1) hue-rotate(180deg) saturate(5) contrast(2);
+}
+@keyframes tilt {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0.01px) rotateY(-20deg) rotateX(5deg);
+  }
+  50% {
+    transform: translate3d(0, 0, 0.01px) rotateY(20deg) rotateX(5deg);
+  }
+}
+@keyframes bg {
+  0%,
+  100% {
+    background-position: 50% 50%, calc(50% + 1px) calc(50% + 1px), 0% 50%;
+  }
+  50% {
+    background-position: 50% 50%, calc(50% - 1px) calc(50% - 1px), 100% 50%;
+  }
+}
+main {
+  display: grid;
+  grid-template-rows: minmax(20px, 100px) 1fr;
+  place-items: center;
+  min-height: 100%;
+  perspective: 1000px;
+}
